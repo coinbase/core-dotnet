@@ -1,6 +1,6 @@
 # Coinbase .NET Core Library
 
-The canonical source repository is **[coinbase/core-dotnet](https://github.com/coinbase/core-dotnet)**. The former [coinbase-samples/core-dotnet](https://github.com/coinbase-samples/core-dotnet) repository is deprecated. New work and releases continue on `coinbase/core-dotnet` starting with **0.2.0**. The NuGet package ID is unchanged (`CoinbaseSdk.Core`).
+The canonical source repository is **[coinbase/core-dotnet](https://github.com/coinbase/core-dotnet)**. The former [coinbase-samples/core-dotnet](https://github.com/coinbase-samples/core-dotnet) repository is deprecated.
 
 ## Overview
 
@@ -74,6 +74,15 @@ var client = new MyCoinbaseClient(credentials, httpClient: httpClient);
 
 ```bash
 dotnet add package CoinbaseSdk.Core
+```
+
+## Development
+
+```bash
+git clone https://github.com/coinbase/core-dotnet.git
+cd core-dotnet
+dotnet build core-dotnet.sln
+dotnet test core-dotnet.sln
 ```
 
 ## License

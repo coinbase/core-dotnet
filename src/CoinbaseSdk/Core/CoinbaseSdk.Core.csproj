@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <Description>CoinbaseSdk.Core is the core library for .NET Coinbase SDKs.</Description>
-    <Version>0.1.1</Version>
+    <Version>0.2.0</Version>
     <LangVersion>12</LangVersion>
     <Authors>Coinbase</Authors>
     <TargetFrameworks>net8.0</TargetFrameworks>
     <PackageTags>coinbase</PackageTags>
-    <PackageProjectUrl>https://github.com/coinbase-samples/core-dotnet</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/coinbase/core-dotnet</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <SignAssembly>True</SignAssembly>
