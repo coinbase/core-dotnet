@@ -81,9 +81,11 @@ dotnet add package CoinbaseSdk.Core
 ```bash
 git clone https://github.com/coinbase/core-dotnet.git
 cd core-dotnet
-dotnet build core-dotnet.sln
-dotnet test core-dotnet.sln
+make tools    # first time: install .NET SDK 10 and net8.0 runtime
+make ci       # format, lint (build), and test
 ```
+
+Individual targets: `make format`, `make lint`, `make build`, `make test`. Use `make format-fix` to apply formatting locally.
 
 ## License
 
