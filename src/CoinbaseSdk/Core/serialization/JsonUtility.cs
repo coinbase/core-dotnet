@@ -26,7 +26,7 @@ namespace CoinbaseSdk.Core.Serialization
 
     public class JsonUtility : IJsonUtility
     {
-        private static readonly object DefaultOptionsLock = new ();
+        private static readonly object DefaultOptionsLock = new object();
         private static JsonSerializerOptions? defaultOptions;
 
         private readonly JsonSerializerOptions options;
@@ -91,7 +91,7 @@ namespace CoinbaseSdk.Core.Serialization
 
         private static JsonSerializerOptions BuildDefaultOptions()
         {
-            JsonSerializerOptions baseOptions = new (JsonSerializerDefaults.Web)
+            JsonSerializerOptions baseOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web)
             {
                 DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
                 PropertyNameCaseInsensitive = true,

@@ -34,8 +34,8 @@ namespace CoinbaseSdk.Core.Tests.Client
         public TestCoinbaseClient(
             CoinbaseCredentials credentials,
             string apiBasePath,
-            IJsonUtility jsonUtility = null,
-            IHttpClient httpClient = null)
+            IJsonUtility? jsonUtility = null,
+            IHttpClient? httpClient = null)
             : base(credentials, apiBasePath, jsonUtility, httpClient)
         {
         }
@@ -58,7 +58,7 @@ namespace CoinbaseSdk.Core.Tests.Client
         [Fact]
         public void Constructor_NullCredentials_ThrowsArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => new TestCoinbaseClient(null, _apiBasePath));
+            Assert.Throws<ArgumentException>(() => new TestCoinbaseClient(null!, _apiBasePath));
         }
 
         [Fact]

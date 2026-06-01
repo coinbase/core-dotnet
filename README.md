@@ -1,5 +1,7 @@
 # Coinbase .NET Core Library
 
+The canonical source repository is **[coinbase/core-dotnet](https://github.com/coinbase/core-dotnet)**. The former [coinbase-samples/core-dotnet](https://github.com/coinbase-samples/core-dotnet) repository is deprecated.
+
 ## Overview
 
 The **Coinbase .NET Core Library** (`CoinbaseSdk.Core`) is the foundational building block for Coinbase .NET SDKs. It provides a standardized, robust, and thread-safe infrastructure for building API clients, handling authentication, HTTP communication, and serialization.
@@ -73,6 +75,17 @@ var client = new MyCoinbaseClient(credentials, httpClient: httpClient);
 ```bash
 dotnet add package CoinbaseSdk.Core
 ```
+
+## Development
+
+```bash
+git clone https://github.com/coinbase/core-dotnet.git
+cd core-dotnet
+make tools    # first time: install .NET SDK 10 and net8.0 runtime
+make ci       # format, lint (build), and test
+```
+
+Individual targets: `make format`, `make lint`, `make build`, `make test`. Use `make format-fix` to apply formatting locally.
 
 ## License
 
