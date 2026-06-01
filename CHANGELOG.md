@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Moved the canonical repository to [coinbase/core-dotnet](https://github.com/coinbase/core-dotnet).
 - Added GitHub Actions for format, build (lint), and tests.
-- Added SECURITY.md and CONTRIBUTING.md aligned with other Coinbase SDKs.
+- Added SECURITY.md, CONTRIBUTING.md, and pull request template aligned with other Coinbase SDKs.
 
 ### Notes
 
