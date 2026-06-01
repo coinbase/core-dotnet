@@ -20,7 +20,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@34c59286e7db319827050ea84bd4d364b67b63b # v4.2.0
         with:
-          dotnet-version: "8.0.x"
+          dotnet-version: "10.0.x"
 
       - name: Build
         run: dotnet build core-dotnet.sln -c Release
