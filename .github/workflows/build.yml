@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 jobs:
   build-and-publish:
     permissions:
@@ -7,8 +10,13 @@ jobs:
       # Build your artifacts/my-sdk.nupkg package here
     
       # Get a short-lived NuGet API key
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
       - name: NuGet login (OIDC → temp API key)
-        uses: NuGet/login@v1
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
         id: login
         with:
           user: ${{ secrets.NUGET_USER }}
