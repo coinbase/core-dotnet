@@ -74,6 +74,22 @@ namespace CoinbaseSdk.Core.Tests.Serialization
             Assert.IsType<DefaultJsonTypeInfoResolver>(options.TypeInfoResolver);
         }
 
+        [Fact]
+        public void CloneDefaultOptions_ReturnsIndependentCopyWithConverters()
+        {
+            var clone = JsonUtility.CloneDefaultOptions();
+
+            Assert.NotSame(JsonUtility.DefaultOptions, clone);
+            Assert.Contains(clone.Converters, converter => converter is JsonStringEnumConverter);
+            Assert.Contains(clone.Converters, converter => converter is NullOnUnknownEnumConverter);
+            Assert.Contains(clone.Converters, converter => converter is UtcIso8601DateTimeOffsetConverter);
+
+            var originalPolicy = JsonUtility.DefaultOptions.PropertyNamingPolicy;
+            clone.PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower;
+            Assert.Equal(originalPolicy, JsonUtility.DefaultOptions.PropertyNamingPolicy);
+            Assert.Equal(JsonNamingPolicy.SnakeCaseLower, clone.PropertyNamingPolicy);
+        }
+
         private class TestObject
         {
             public string? Name { get; set; }
