@@ -46,6 +46,18 @@ namespace CoinbaseSdk.Core.Serialization
         /// </summary>
         public static JsonSerializerOptions DefaultOptions => EnsureDefaultOptions();
 
+        /// <summary>
+        /// Creates a mutable copy of <see cref="DefaultOptions"/> (converters, resolver, and other settings included).
+        /// Product SDKs can adjust the clone — for example <see cref="JsonNamingPolicy.SnakeCaseLower"/> — before
+        /// constructing a dedicated <see cref="JsonUtility"/> for HTTP serialization.
+        /// Per-property <c>[JsonPropertyName]</c> still overrides the naming policy when present.
+        /// </summary>
+        /// <returns>A new <see cref="JsonSerializerOptions"/> instance.</returns>
+        public static JsonSerializerOptions CloneDefaultOptions()
+        {
+            return new JsonSerializerOptions(DefaultOptions);
+        }
+
         public string Serialize(object obj)
         {
             return JsonSerializer.Serialize(obj, this.options);
